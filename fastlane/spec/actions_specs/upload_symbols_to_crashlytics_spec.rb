@@ -9,6 +9,7 @@ describe Fastlane do
             binary_path: './fastlane/spec/fixtures/screenshots/screenshot1.png')
         end").runner.execute(:test)
 
+        result = result.join(" ")
         expect(result).to include("screenshot1.png")
         expect(result).to include("-a something123 -p ios")
         expect(result).to include("dSYM/Themoji.dSYM.zip")
